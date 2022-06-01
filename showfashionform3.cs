@@ -10,11 +10,44 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Xml;
+using System.Net;
 
 namespace Teamproject1
 {
     public partial class showfashionform3 : Form
     {
+        string query = "http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1135056000";
+
+            WebRequest wr = WebRequest.Create(query);
+            wr.Method = "GET";
+
+            WebResponse wrs = wr.GetResponse();
+            Stream s = wrs.GetResponseStream();
+            StreamReader sr = new StreamReader(s);
+
+            string response = sr.ReadToEnd();
+
+            XmlDocument xd = new XmlDocument();
+            xd.LoadXml(response);
+
+            XmlNode channel = xd["rss"]["channel"];
+
+            XmlNode xn = xd["rss"]["channel"]["item"]["description"]["body"];
+
+            //textBox에 대입하는 부분
+            //textBox1.Text = xn.ChildNodes[0]["hour"].InnerText;
+
+            //날짜 처리를 위한 string
+            string m = Convert.ToString(channel["pubDate"].InnerText);
+
+            //날짜
+            string Date = m.Substring(0, 18);
+            //평균 온도
+            string tem = xn.ChildNodes[1]["temp"].InnerText;
+            //월            
+            string Month = m.Substring(6, 2);
+        
         MySQL mysql = new MySQL("127.0.0.1", "sys", "root", "rlathgml72");
         //bool result = false;
         public showfashionform3()
