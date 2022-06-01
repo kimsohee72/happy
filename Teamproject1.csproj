@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FF8E548B-CCEC-4047-B01F-D01DED3C57FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Teamproject1</RootNamespace>
+    <AssemblyName>Teamproject1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="favorite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="favorite.Designer.cs">
+      <DependentUpon>favorite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="graghform2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="graghform2.Designer.cs">
+      <DependentUpon>graghform2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="logincompleted1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="logincompleted1.Designer.cs">
+      <DependentUpon>logincompleted1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginfailed1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginfailed1.Designer.cs">
+      <DependentUpon>loginfailed1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginform2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginform2.Designer.cs">
+      <DependentUpon>loginform2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainform1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainform1.Designer.cs">
+      <DependentUpon>mainform1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MySQL.cs" />
+    <Compile Include="profileform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="profileform.Designer.cs">
+      <DependentUpon>profileform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="showfashionform3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showfashionform3.Designer.cs">
+      <DependentUpon>showfashionform3.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="favorite.resx">
+      <DependentUpon>favorite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="graghform2.resx">
+      <DependentUpon>graghform2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logincompleted1.resx">
+      <DependentUpon>logincompleted1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginfailed1.resx">
+      <DependentUpon>loginfailed1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginform2.resx">
+      <DependentUpon>loginform2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainform1.resx">
+      <DependentUpon>mainform1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profileform.resx">
+      <DependentUpon>profileform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="showfashionform3.resx">
+      <DependentUpon>showfashionform3.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
