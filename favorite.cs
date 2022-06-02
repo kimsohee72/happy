@@ -23,16 +23,24 @@ namespace Teamproject1
 
         private void favorite_Load(object sender, EventArgs e)
         {
-            MySqlConnection connection = mysql.Connection();
-            string sql = "select * from login2";
-            connection.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                textBox1.Text += reader[0].ToString() + "\r\n" + reader[1].ToString() + " " + reader[2].ToString() + "\r\n \r\n";
+                MySqlConnection connection = mysql.Connection();
+                string sql = "select * from login2";
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
+
+                while (reader.Read())
+                {
+                    textBox1.Text += reader[0].ToString() + "\r\n" + reader[3].ToString() + "\r\n"+ reader[1].ToString() + " " + reader[2].ToString() + "\r\n \r\n";
+                }
             }
+            catch
+            {
+                textBox1.Text += "데이터베이스가 연결되어 있지 않습니다";
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

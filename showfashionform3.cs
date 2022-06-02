@@ -72,33 +72,42 @@ namespace Teamproject1
             {
                 sql = " ";
             }
-            connection.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                Tcloth = reader[4].ToString();
-                string pick = "오늘은 날씨가 " + weather + "이므로 " + Tcloth + "를 입는 것이 좋습니다!";
-                extradesign.Text = pick+"\r\n";
-                Regex regex = new Regex(Tcloth);
-                MatchCollection mc = regex.Matches(extradesign.Text);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
 
-                int Coursor = extradesign.SelectionStart;
-
-                foreach(Match match in mc)
+                while (reader.Read())
                 {
-                    int start = match.Index;
-                    int stop = match.Length;
+                    Tcloth = reader[4].ToString();
+                    string pick = "오늘은 날씨가 " + weather + "이므로 " + Tcloth + "를 입는 것이 좋습니다!";
+                    extradesign.Text = pick + "\r\n";
+                    Regex regex = new Regex(Tcloth);
+                    MatchCollection mc = regex.Matches(extradesign.Text);
 
-                    extradesign.Select(start, stop);
-                    extradesign.SelectionColor = Color.Red;
-                    extradesign.SelectionStart = Coursor;
-                    extradesign.SelectionColor = Color.Black;
+                    int Coursor = extradesign.SelectionStart;
+
+                    foreach (Match match in mc)
+                    {
+                        int start = match.Index;
+                        int stop = match.Length;
+
+                        extradesign.Select(start, stop);
+                        extradesign.SelectionColor = Color.Red;
+                        extradesign.SelectionStart = Coursor;
+                        extradesign.SelectionColor = Color.Black;
+                    }
                 }
+                reader.Close();
+                connection.Close();
             }
-            reader.Close();
-            connection.Close();
+            catch
+            {
+                string pick = "오늘은 날씨가 맑음이므로 크롭티를 입는게 좋을 것 같습니다 (데이터베이스 연결 안됨)";
+                extradesign.Text = pick + "\r\n";
+            }
+            
 
         }
 
@@ -148,35 +157,43 @@ namespace Teamproject1
             {
                 sql = " ";
             }
-            connection.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                
-                Tcloth = reader[4].ToString();
-                Bcloth = reader[6].ToString();
-                string pick = Tcloth + "와 함께 " + Bcloth + "을 입는 것을 추천합니다";
-                extradesign.Text += pick + "\r\n";
-                Regex regex1 = new Regex(Bcloth);
-                MatchCollection m = regex1.Matches(extradesign.Text);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
 
-                int Coursor = extradesign.SelectionStart;
-
-                foreach (Match match in m)
+                while (reader.Read())
                 {
-                    int start = match.Index;
-                    int stop = match.Length;
 
-                    extradesign.Select(start, stop);
-                    extradesign.SelectionColor = Color.Blue;
-                    extradesign.SelectionStart = Coursor;
-                    extradesign.SelectionColor = Color.Black;
+                    Tcloth = reader[4].ToString();
+                    Bcloth = reader[6].ToString();
+                    string pick = Tcloth + "와 함께 " + Bcloth + "을 입는 것을 추천합니다";
+                    extradesign.Text += pick + "\r\n";
+                    Regex regex1 = new Regex(Bcloth);
+                    MatchCollection m = regex1.Matches(extradesign.Text);
+
+                    int Coursor = extradesign.SelectionStart;
+
+                    foreach (Match match in m)
+                    {
+                        int start = match.Index;
+                        int stop = match.Length;
+
+                        extradesign.Select(start, stop);
+                        extradesign.SelectionColor = Color.Blue;
+                        extradesign.SelectionStart = Coursor;
+                        extradesign.SelectionColor = Color.Black;
+                    }
                 }
+                reader.Close();
+                connection.Close();
             }
-            reader.Close();
-            connection.Close();
+            catch
+            {
+                string pick = "크롭티와 함께 진청바지를 입는 것을 추천합니다(데이터베이스 연결 안됨)";
+                extradesign.Text += pick + "\r\n";
+            }
         }
 
         private void outer_Click(object sender, EventArgs e)
@@ -225,24 +242,33 @@ namespace Teamproject1
             {
                 sql = " ";
             }
-            connection.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                Tcloth = reader[4].ToString();
-                Bcloth = reader[6].ToString();
-                Outer = reader[5].ToString();
-                string pick;
-                if(Outer != "")
-                    pick = "오늘 날씨에는 " + Outer + "를 입는 것이 좋겠어요";
-                else
-                    pick = "아웃터가 없어도 괜찮을 날씨 입니당~!";
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Tcloth = reader[4].ToString();
+                    Bcloth = reader[6].ToString();
+                    Outer = reader[5].ToString();
+                    string pick;
+                    if (Outer != "")
+                        pick = "오늘 날씨에는 " + Outer + "를 입는 것이 좋겠어요";
+                    else
+                        pick = "아웃터가 없어도 괜찮을 날씨 입니당~!";
+                    extradesign.Text += pick + "\r\n";
+                }
+                reader.Close();
+                connection.Close();
+            }
+            catch
+            {
+                string pick = "아웃터가 없어도 괜찮을 날씨 입니당~! (데이터베이스 연결 안됨)";
                 extradesign.Text += pick + "\r\n";
             }
-            reader.Close();
-            connection.Close();
+            
         }
 
         private void showfasionmainbutton_Click(object sender, EventArgs e)
@@ -300,35 +326,46 @@ namespace Teamproject1
             {
                 sql = " ";
             }
-            connection.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                if (Outer == "")
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
+
+                while (reader.Read())
                 {
-                    Tcloth = reader[4].ToString();
-                    Bcloth = reader[6].ToString();
-                    Outer = reader[5].ToString();
-                    string c = ".\\cloth\\" + Tcloth + " " + Bcloth + ".jpg";
-                    string d = ".\\cloth\\" + Tcloth + " " + Bcloth + "2.jpg";
-                    expicture1.Image = Image.FromFile(c);
-                    expicture2.Image = Image.FromFile(d);
+                    if (Outer == "")
+                    {
+                        Tcloth = reader[4].ToString();
+                        Bcloth = reader[6].ToString();
+                        Outer = reader[5].ToString();
+                        string c = ".\\cloth\\" + Tcloth + " " + Bcloth + ".jpg";
+                        string d = ".\\cloth\\" + Tcloth + " " + Bcloth + "2.jpg";
+                        expicture1.Image = Image.FromFile(c);
+                        expicture2.Image = Image.FromFile(d);
+                    }
+                    else
+                    {
+                        Tcloth = reader[4].ToString();
+                        Bcloth = reader[6].ToString();
+                        Outer = reader[5].ToString();
+                        string c = ".\\cloth\\" + Tcloth + " " + Outer + " " + Bcloth + ".jpg";
+                        string d = ".\\cloth\\" + Tcloth + " " + Outer + " " + Bcloth + "2.jpg";
+                        expicture1.Image = Image.FromFile(c);
+                        expicture2.Image = Image.FromFile(d);
+                    }
                 }
-                else
-                {
-                    Tcloth = reader[4].ToString();
-                    Bcloth = reader[6].ToString();
-                    Outer = reader[5].ToString();
-                    string c = ".\\cloth\\" + Tcloth + " " + Outer+ " "+ Bcloth + ".jpg";
-                    string d = ".\\cloth\\" + Tcloth + " " + Outer + " " + Bcloth + "2.jpg";
-                    expicture1.Image = Image.FromFile(c);
-                    expicture2.Image = Image.FromFile(d);
-                }
+                reader.Close();
+                connection.Close();
             }
-            reader.Close();
-            connection.Close();
+            catch
+            {
+                string c = ".\\cloth\\크롭티 진청바지.jpg";
+                string d = ".\\cloth\\크롭티 진청바지2.jpg";
+                expicture1.Image = Image.FromFile(c);
+                expicture2.Image = Image.FromFile(d);
+            }
+            
         }
 
         private void showother_Click(object sender, EventArgs e)
@@ -387,14 +424,22 @@ namespace Teamproject1
             try
             {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
-                MessageBox.Show("감정을 입력했습니다");
+                try
+                {
+
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
+                    MessageBox.Show("감정을 입력했습니다");
+                }
+                catch
+                {
+                    MessageBox.Show("이미 감정을 입력했습니다");
+
+                }
             }
             catch
             {
-                MessageBox.Show("이미 감정을 입력했습니다");
-
+                MessageBox.Show("데이터베이스가 연결되어 있지 않습니다.");
             }
             
         }
@@ -414,14 +459,22 @@ namespace Teamproject1
             try
             {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
-                MessageBox.Show("감정을 입력했습니다");
+                try
+                {
+
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
+                    MessageBox.Show("감정을 입력했습니다");
+                }
+                catch
+                {
+                    MessageBox.Show("이미 감정을 입력했습니다");
+
+                }
             }
             catch
             {
-                MessageBox.Show("이미 감정을 입력했습니다");
-
+                MessageBox.Show("데이터베이스가 연결되어 있지 않습니다.");
             }
         }
 
@@ -440,15 +493,24 @@ namespace Teamproject1
             try
             {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
-                MessageBox.Show("감정을 입력했습니다");
+                try
+                {
+
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
+                    MessageBox.Show("감정을 입력했습니다");
+                }
+                catch
+                {
+                    MessageBox.Show("이미 감정을 입력했습니다");
+
+                }
             }
             catch
             {
-                MessageBox.Show("이미 감정을 입력했습니다");
-
+                MessageBox.Show("데이터베이스가 연결되어 있지 않습니다.");
             }
+            
         }
     }
 }
