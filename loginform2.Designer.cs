@@ -71,7 +71,7 @@
             this.idinput.Size = new System.Drawing.Size(686, 29);
             this.idinput.TabIndex = 3;
             this.idinput.Text = "아이디 또는 이메일을 입력하세요.";
-            this.idinput.TextChanged += new System.EventHandler(this.idinput_TextChanged);
+            this.idinput.Click += new System.EventHandler(this.idinput_Click);
             // 
             // pwdinput
             // 
@@ -82,9 +82,11 @@
             this.pwdinput.Size = new System.Drawing.Size(686, 29);
             this.pwdinput.TabIndex = 4;
             this.pwdinput.Text = "비밀번호를 입력하세요.";
+            this.pwdinput.Click += new System.EventHandler(this.pwdinput_Click);
             // 
             // loginformcopywrite
             // 
+            this.loginformcopywrite.Enabled = false;
             this.loginformcopywrite.Font = new System.Drawing.Font("카페24 써라운드", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginformcopywrite.Location = new System.Drawing.Point(15, 125);
             this.loginformcopywrite.Margin = new System.Windows.Forms.Padding(4);

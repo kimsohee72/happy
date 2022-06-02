@@ -108,6 +108,20 @@ namespace Teamproject1
             showfasionform4.Show();
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.Hide();
+            showfashionform3 showfasionform4 = new showfashionform3();
+            showfasionform4.Show();
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            showfashionform3 showfasionform4 = new showfashionform3();
+            showfasionform4.Show();
+        }
     }
 }
 

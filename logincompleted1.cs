@@ -19,7 +19,16 @@ namespace Teamproject1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            favorite fa = new favorite();
+            fa.Show();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            favorite ma = new favorite();
+            ma.Show();
         }
     }
 }

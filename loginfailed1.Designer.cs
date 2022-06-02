@@ -35,10 +35,11 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("카페24 써라운드", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(209, 176);
+            this.button1.Location = new System.Drawing.Point(141, 152);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(334, 217);
+            this.button1.Size = new System.Drawing.Size(471, 217);
             this.button1.TabIndex = 0;
             this.button1.TabStop = false;
             this.button1.Text = "ID나 비밀번호를 확인해 주세요!";

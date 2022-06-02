@@ -85,12 +85,6 @@
       <DependentUpon>mainform1.cs</DependentUpon>
     </Compile>
     <Compile Include="MySQL.cs" />
-    <Compile Include="profileform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="profileform.Designer.cs">
-      <DependentUpon>profileform.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="showfashionform3.cs">
@@ -117,9 +111,6 @@
     <EmbeddedResource Include="mainform1.resx">
       <DependentUpon>mainform1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="profileform.resx">
-      <DependentUpon>profileform.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -128,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="showfashionform3.resx">
       <DependentUpon>showfashionform3.cs</DependentUpon>
@@ -144,6 +136,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\다운로드 %282%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\다운로드 %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\다운로드.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace Teamproject1
 {
@@ -23,7 +24,22 @@ namespace Teamproject1
         private void favorite_Load(object sender, EventArgs e)
         {
             MySqlConnection connection = mysql.Connection();
-            string sql = "select ";
+            string sql = "select * from login2";
+            connection.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = new MySqlCommand(sql, connection).ExecuteReader();
+
+            while (reader.Read())
+            {
+                textBox1.Text += reader[0].ToString() + "\r\n" + reader[1].ToString() + " " + reader[2].ToString() + "\r\n \r\n";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainform1 ma = new mainform1();
+            ma.Show();
         }
     }
 }

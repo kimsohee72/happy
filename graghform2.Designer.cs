@@ -63,6 +63,7 @@ namespace Teamproject1
             // 
             // graphformcopy1
             // 
+            this.graphformcopy1.Enabled = false;
             this.graphformcopy1.Font = new System.Drawing.Font("카페24 써라운드", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.graphformcopy1.Location = new System.Drawing.Point(15, 385);
             this.graphformcopy1.Margin = new System.Windows.Forms.Padding(4);
@@ -74,6 +75,7 @@ namespace Teamproject1
             // 
             // graphformcopy2
             // 
+            this.graphformcopy2.Enabled = false;
             this.graphformcopy2.Font = new System.Drawing.Font("카페24 써라운드 에어 ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.graphformcopy2.Location = new System.Drawing.Point(15, 475);
             this.graphformcopy2.Margin = new System.Windows.Forms.Padding(4);
@@ -97,6 +99,7 @@ namespace Teamproject1
             // 
             // malefashion
             // 
+            this.malefashion.Enabled = false;
             this.malefashion.Font = new System.Drawing.Font("카페24 써라운드", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.malefashion.Location = new System.Drawing.Point(34, 665);
             this.malefashion.Margin = new System.Windows.Forms.Padding(4);
@@ -108,6 +111,7 @@ namespace Teamproject1
             // 
             // femalefashion
             // 
+            this.femalefashion.Enabled = false;
             this.femalefashion.Font = new System.Drawing.Font("카페24 써라운드", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.femalefashion.Location = new System.Drawing.Point(192, 665);
             this.femalefashion.Margin = new System.Windows.Forms.Padding(4);
@@ -119,6 +123,7 @@ namespace Teamproject1
             // 
             // agespecific
             // 
+            this.agespecific.Enabled = false;
             this.agespecific.Font = new System.Drawing.Font("카페24 써라운드", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agespecific.Location = new System.Drawing.Point(349, 665);
             this.agespecific.Margin = new System.Windows.Forms.Padding(4);
@@ -130,6 +135,7 @@ namespace Teamproject1
             // 
             // seasonspecific
             // 
+            this.seasonspecific.Enabled = false;
             this.seasonspecific.Font = new System.Drawing.Font("카페24 써라운드", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seasonspecific.Location = new System.Drawing.Point(508, 665);
             this.seasonspecific.Margin = new System.Windows.Forms.Padding(4);
@@ -153,6 +159,7 @@ namespace Teamproject1
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("카페24 써라운드", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(275, 594);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
@@ -190,9 +197,12 @@ namespace Teamproject1
             this.textBox1.Font = new System.Drawing.Font("카페24 써라운드", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox1.Location = new System.Drawing.Point(96, 37);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(189, 41);
             this.textBox1.TabIndex = 16;
             this.textBox1.Text = "날씨에 맞는 옷";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // graghform2
             // 

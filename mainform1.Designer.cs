@@ -34,7 +34,6 @@
             this.mainpictureboxparent = new System.Windows.Forms.PictureBox();
             this.loginbutton = new System.Windows.Forms.Button();
             this.gobutton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainpictureboxparent)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +74,7 @@
             this.mainpictureboxparent.ErrorImage = ((System.Drawing.Image)(resources.GetObject("mainpictureboxparent.ErrorImage")));
             this.mainpictureboxparent.Image = ((System.Drawing.Image)(resources.GetObject("mainpictureboxparent.Image")));
             this.mainpictureboxparent.Location = new System.Drawing.Point(-14, 4);
-            this.mainpictureboxparent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainpictureboxparent.Margin = new System.Windows.Forms.Padding(4);
             this.mainpictureboxparent.Name = "mainpictureboxparent";
             this.mainpictureboxparent.Size = new System.Drawing.Size(670, 976);
             this.mainpictureboxparent.TabIndex = 0;
@@ -86,10 +85,10 @@
             this.loginbutton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.loginbutton.Font = new System.Drawing.Font("카페24 써라운드", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.loginbutton.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.loginbutton.Location = new System.Drawing.Point(538, 610);
-            this.loginbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginbutton.Location = new System.Drawing.Point(517, 700);
+            this.loginbutton.Margin = new System.Windows.Forms.Padding(4);
             this.loginbutton.Name = "loginbutton";
-            this.loginbutton.Size = new System.Drawing.Size(75, 60);
+            this.loginbutton.Size = new System.Drawing.Size(91, 79);
             this.loginbutton.TabIndex = 4;
             this.loginbutton.Text = "LOGIN";
             this.loginbutton.UseVisualStyleBackColor = false;
@@ -100,38 +99,24 @@
             this.gobutton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.gobutton.Font = new System.Drawing.Font("카페24 써라운드", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gobutton.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.gobutton.Location = new System.Drawing.Point(538, 413);
-            this.gobutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gobutton.Location = new System.Drawing.Point(517, 417);
+            this.gobutton.Margin = new System.Windows.Forms.Padding(4);
             this.gobutton.Name = "gobutton";
-            this.gobutton.Size = new System.Drawing.Size(75, 62);
+            this.gobutton.Size = new System.Drawing.Size(91, 81);
             this.gobutton.TabIndex = 5;
             this.gobutton.Text = "GO";
             this.gobutton.UseVisualStyleBackColor = false;
             this.gobutton.Click += new System.EventHandler(this.gobutton_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("카페24 써라운드", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.Navy;
-            this.button1.Location = new System.Drawing.Point(538, 701);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 70);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "INFO";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.Font = new System.Drawing.Font("카페24 써라운드", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Location = new System.Drawing.Point(538, 504);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(517, 555);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 68);
+            this.button2.Size = new System.Drawing.Size(91, 87);
             this.button2.TabIndex = 9;
             this.button2.Text = "PICK";
             this.button2.UseVisualStyleBackColor = false;
@@ -141,16 +126,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 879);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(659, 879);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.gobutton);
             this.Controls.Add(this.loginbutton);
             this.Controls.Add(this.maincopywrite2);
             this.Controls.Add(this.maincopywirte);
             this.Controls.Add(this.mainpictureboxparent);
-            this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mainform1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.mainpictureboxparent)).EndInit();
@@ -165,7 +149,6 @@
         private System.Windows.Forms.PictureBox mainpictureboxparent;
         private System.Windows.Forms.Button loginbutton;
         private System.Windows.Forms.Button gobutton;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
 }

@@ -52,9 +52,14 @@ namespace Teamproject1
             }
         }
 
-        private void idinput_TextChanged(object sender, EventArgs e)
+        private void idinput_Click(object sender, EventArgs e)
         {
+            idinput.Text = "";
+        }
 
+        private void pwdinput_Click(object sender, EventArgs e)
+        {
+            pwdinput.Text = "";
         }
     }
 }

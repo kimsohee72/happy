@@ -34,15 +34,6 @@ namespace Teamproject1
             loginform2 loginform1 = new loginform2();
             loginform1.Show();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            profileform profileform1 = new profileform();
-            profileform1.Show();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
