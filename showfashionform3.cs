@@ -82,7 +82,7 @@ namespace Teamproject1
                 {
                     Tcloth = reader[4].ToString();
                     string pick = "오늘은 날씨가 " + weather + "이므로 " + Tcloth + "를 입는 것이 좋습니다!";
-                    extradesign.Text = pick + "\r\n";
+                    extradesign.Text = pick + "\r\n\r\n";
                     Regex regex = new Regex(Tcloth);
                     MatchCollection mc = regex.Matches(extradesign.Text);
 
@@ -105,7 +105,7 @@ namespace Teamproject1
             catch
             {
                 string pick = "오늘은 날씨가 맑음이므로 크롭티를 입는게 좋을 것 같습니다 (데이터베이스 연결 안됨)";
-                extradesign.Text = pick + "\r\n";
+                extradesign.Text = pick + "\r\n\r\n";
             }
             
 
@@ -169,7 +169,7 @@ namespace Teamproject1
                     Tcloth = reader[4].ToString();
                     Bcloth = reader[6].ToString();
                     string pick = Tcloth + "와 함께 " + Bcloth + "을 입는 것을 추천합니다";
-                    extradesign.Text += pick + "\r\n";
+                    extradesign.Text += pick + "\r\n\r\n";
                     Regex regex1 = new Regex(Bcloth);
                     MatchCollection m = regex1.Matches(extradesign.Text);
 
@@ -192,7 +192,7 @@ namespace Teamproject1
             catch
             {
                 string pick = "크롭티와 함께 진청바지를 입는 것을 추천합니다(데이터베이스 연결 안됨)";
-                extradesign.Text += pick + "\r\n";
+                extradesign.Text += pick + "\r\n\r\n";
             }
         }
 
@@ -258,7 +258,7 @@ namespace Teamproject1
                         pick = "오늘 날씨에는 " + Outer + "를 입는 것이 좋겠어요";
                     else
                         pick = "아웃터가 없어도 괜찮을 날씨 입니당~!";
-                    extradesign.Text += pick + "\r\n";
+                    extradesign.Text += pick + "\r\n\r\n";
                 }
                 reader.Close();
                 connection.Close();
@@ -266,7 +266,7 @@ namespace Teamproject1
             catch
             {
                 string pick = "아웃터가 없어도 괜찮을 날씨 입니당~! (데이터베이스 연결 안됨)";
-                extradesign.Text += pick + "\r\n";
+                extradesign.Text += pick + "\r\n\r\n";
             }
             
         }
@@ -416,9 +416,9 @@ namespace Teamproject1
             if(Tcloth!="" && Bcloth != "")
             {
                 if (Outer != "")
-                    pick = Tcloth + "과" + Bcloth + "를 입으세요." + Outer + "를 챙기는게 좋겠어요.";
+                    pick = Tcloth + "과/와 " + Bcloth + "를 입으세요." + Outer + "를 챙기는게 좋겠어요.";
                 else
-                    pick = Tcloth + "과" + Bcloth + "를 입으세요." + "오늘은 아우터를 챙기지 않아도 괜찮아요.";
+                    pick = Tcloth + "과/와 " + Bcloth + "를 입으세요." + "오늘은 아우터를 챙기지 않아도 괜찮아요.";
             }
             string sql = "insert into login2 (cloth, date, feel) values (\'" + Date + "\',\'" + pick + "\',\'아주 좋아요\')";
             try
@@ -451,9 +451,9 @@ namespace Teamproject1
             if (Tcloth != "" && Bcloth != "")
             {
                 if (Outer != "")
-                    pick = Tcloth + "과" + Bcloth + "를 입으세요." + Outer + "를 챙기는게 좋겠어요.";
+                    pick = Tcloth + "과/와 " + Bcloth + "를 입으세요." + Outer + "를 챙기는게 좋겠어요.";
                 else
-                    pick = Tcloth + "과" + Bcloth + "를 입으세요." + "오늘은 아우터를 챙기지 않아도 괜찮아요.";
+                    pick = Tcloth + "과/와 " + Bcloth + "를 입으세요." + "오늘은 아우터를 챙기지 않아도 괜찮아요.";
             }
             string sql = "insert into login2 (cloth, date, feel) values (\'" + Date + "\',\'" + pick + "\',\'그저그래요\')";
             try
@@ -485,9 +485,9 @@ namespace Teamproject1
             if (Tcloth != "" && Bcloth != "")
             {
                 if (Outer != "")
-                    pick = Tcloth + "과" + Bcloth + "를 입으세요." + Outer + "를 챙기는게 좋겠어요.";
+                    pick = Tcloth + "과/와 " + Bcloth + "를 입으세요." + Outer + "를 챙기는게 좋겠어요.";
                 else
-                    pick = Tcloth + "과" + Bcloth + "를 입으세요." + "오늘은 아우터를 챙기지 않아도 괜찮아요.";
+                    pick = Tcloth + "과/와 " + Bcloth + "를 입으세요." + "오늘은 아우터를 챙기지 않아도 괜찮아요.";
             }
             string sql = "insert into login2 (cloth, date, feel) values (\'" + Date + "\',\'" + pick + "\',\'별로에요\')";
             try
