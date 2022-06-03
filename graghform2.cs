@@ -68,6 +68,9 @@ namespace Teamproject1
             chart1.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
 
             CustomLabel[] cl = new CustomLabel[9];
+            
+            double high_t = Convert.ToDouble(xn.ChildNodes[0]["temp"].InnerText);
+            double low_t = Convert.ToDouble(xn.ChildNodes[0]["temp"].InnerText);
 
             for (int i = 0; i < 7; i++)
             {
