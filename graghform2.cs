@@ -53,17 +53,6 @@ namespace Teamproject1
             //데이터 처리
             XmlNode xn = xd["rss"]["channel"]["item"]["description"]["body"];
 
-            //평균온도
-            string avg_t = "평균:" + xn.ChildNodes[1]["temp"].InnerText;
-            //최고온도
-            string high_t = "최고:" + xn.ChildNodes[0]["temp"].InnerText;
-            //최저온도
-            string low_t = "최저:" + xn.ChildNodes[3]["temp"].InnerText;
-
-            weatherinfo.Text = "#" + avg_t + " ";
-            weatherinfo.Text += "#" + high_t + " ";
-            weatherinfo.Text += "#" + low_t + " ";
-
             //원래 차트에 그려져 있던 내용 초기화
             chart1.Series[0].Points.Clear();
 
@@ -90,7 +79,22 @@ namespace Teamproject1
                 cl[i].FromPosition = i - 1;
                 cl[i].ToPosition = i + 1;
                 chart1.ChartAreas[0].AxisX.CustomLabels.Add(cl[i]);
+                
+                //최고, 최저 온도
+                double h = Convert.ToDouble(xn.ChildNodes[i]["temp"].InnerText);
+
+                if (h > high_t)
+                    high_t = h;
+
+                if (h < low_t)
+                    low_t = h;
             }
+             //평균 온도
+            double avg_t = (high_t+ low_t) / 2;
+
+            weatherinfo.Text = "#평균:" + avg_t + " ";
+            weatherinfo.Text += "#최고:" + high_t.ToString() + " ";
+            weatherinfo.Text += "#최저:" + low_t.ToString() + " ";
         }
 
         private void graphformbutton_Click(object sender, EventArgs e)
