@@ -18,6 +18,7 @@ namespace Teamproject1
     public partial class showfashionform3 : Form
     {
         string Tcloth = "", Bcloth = "", Outer = "", weather = "",Date;
+        string avg, high, low;
         double tem;
         MySQL mysql = new MySQL("127.0.0.1", "sys", "root", "rlathgml72");
         //bool result = false;
@@ -402,9 +403,30 @@ namespace Teamproject1
             weather = xn.ChildNodes[1]["wfKor"].InnerText;
             //날짜
             Date = m.Substring(0, 19);
+            double high_t = Convert.ToDouble(xn.ChildNodes[0]["temp"].InnerText);
+            double low_t = Convert.ToDouble(xn.ChildNodes[0]["temp"].InnerText);
+
+            for (int i = 0; i < 7; i++)
+            {
+                double graph_temp = double.Parse(xn.ChildNodes[i]["temp"].InnerText);
+                //기온으로 그래프 그리기
+
+                //최고, 최저 온도
+                double h = Convert.ToDouble(xn.ChildNodes[i]["temp"].InnerText);
+
+                if (h > high_t)
+                    high_t = h;
+
+                if (h < low_t)
+                    low_t = h;
+            }
             //평균 온도
-            string t = xn.ChildNodes[1]["temp"].InnerText;
-            tem = Convert.ToDouble(t);
+            tem = (high_t + low_t) / 2;
+
+            avg= "#평균:" + tem + " ";
+            high= "#최고:" + high_t.ToString() + " ";
+            low= "#최저:" + low_t.ToString() + " ";
+            
             //월            
             string Month = m.Substring(6, 2);
         }
@@ -420,7 +442,8 @@ namespace Teamproject1
                 else
                     pick = Tcloth + "과/와 " + Bcloth + "를 입으세요." + "오늘은 아우터를 챙기지 않아도 괜찮아요.";
             }
-            string sql = "insert into login2 (cloth, date, feel) values (\'" + Date + "\',\'" + pick + "\',\'아주 좋아요\')";
+            string w = high + low + avg;
+            string sql = "insert into login2 (cloth, date, feel,weather) values (\'" + Date + "\',\'" + pick + "\',\'아주 좋아요\',\'" + w +"\')";
             try
             {
                 connection.Open();
@@ -455,7 +478,8 @@ namespace Teamproject1
                 else
                     pick = Tcloth + "과/와 " + Bcloth + "를 입으세요." + "오늘은 아우터를 챙기지 않아도 괜찮아요.";
             }
-            string sql = "insert into login2 (cloth, date, feel) values (\'" + Date + "\',\'" + pick + "\',\'그저그래요\')";
+            string w = high + low + avg;
+            string sql = "insert into login2 (cloth, date, feel,weather) values (\'" + Date + "\',\'" + pick + "\',\'그저그래요\',\'" + w + "\')";
             try
             {
                 connection.Open();
@@ -489,7 +513,8 @@ namespace Teamproject1
                 else
                     pick = Tcloth + "과/와 " + Bcloth + "를 입으세요." + "오늘은 아우터를 챙기지 않아도 괜찮아요.";
             }
-            string sql = "insert into login2 (cloth, date, feel) values (\'" + Date + "\',\'" + pick + "\',\'별로에요\')";
+            string w = high + low + avg;
+            string sql = "insert into login2 (cloth, date, feel,weather) values (\'" + Date + "\',\'" + pick + "\',\'별로에요\',\'" + w + "\')";
             try
             {
                 connection.Open();
