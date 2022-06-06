@@ -82,7 +82,7 @@ namespace Teamproject1
                 cl[i].FromPosition = i - 1;
                 cl[i].ToPosition = i + 1;
                 chart1.ChartAreas[0].AxisX.CustomLabels.Add(cl[i]);
-                
+               
                 //최고, 최저 온도
                 double h = Convert.ToDouble(xn.ChildNodes[i]["temp"].InnerText);
 
